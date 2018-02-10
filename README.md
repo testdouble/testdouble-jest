@@ -53,8 +53,8 @@ describe('td.replace', () => {
 })
 ```
 
-If you've used `jest.mock()` before, the above will seem pretty familiar. In
-short, `td.mock()` won't return the `jest` object (since that's what
+If you've used `jest.mock()` before, the above will seem pretty familiar. 
+`td.mock()` will return the `jest` object (since that's what
 `jest.mock()` does), so your test will also need to `require()` the thing you
 just faked if you want to set up any stubbings or invocation assertions. You may
 also want to look at this project's [example](/example) project.
