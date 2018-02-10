@@ -1,0 +1,15 @@
+{
+  "name": "testdouble-jest-example",
+  "private": "true",
+  "version": "1.0.0",
+  "description": "An example project using testdouble-jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^22.2.2",
+    "testdouble": "^3.4.0",
+    "testdouble-jest": "file://.."
+  }
+}

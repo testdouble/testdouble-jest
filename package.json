@@ -1,0 +1,24 @@
+{
+  "name": "testdouble-jest",
+  "version": "1.0.0",
+  "description": "testdouble.js extension to add support for Jest module mocking",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd example && npm it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testdouble/testdouble-jest.git"
+  },
+  "keywords": [
+    "testdouble",
+    "jest",
+    "mock"
+  ],
+  "author": "Justin Searls <searls@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/testdouble/testdouble-jest/issues"
+  },
+  "homepage": "https://github.com/testdouble/testdouble-jest#readme"
+}
