@@ -32,6 +32,8 @@ dependency and use Jest's own module mocking facility to ensure that any
 `require()` calls by your test subject receive the testdouble fake, as opposed
 to the real dependency.
 
+Here's an example to give you an idea of what typical usage looks like:
+
 ```js
 let subject
 describe('td.replace', () => {
@@ -42,7 +44,7 @@ describe('td.replace', () => {
   })
   it('calculates payments', () => {
     const loadInvoices = require('./load-invoices')
-    td.when(bar(2018, 7)).thenReturn([24,28])
+    td.when(loadInvoices(2018, 7)).thenReturn([24,28])
 
     const result = subject('2018-07')
 
@@ -54,7 +56,8 @@ describe('td.replace', () => {
 If you've used `jest.mock()` before, the above will seem pretty familiar. In
 short, `td.mock()` won't return the `jest` object (since that's what
 `jest.mock()` does), so your test will also need to `require()` the thing you
-just faked if you want to set up any stubbings or invocation assertions.
+just faked if you want to set up any stubbings or invocation assertions. You may
+also want to look at this project's [example](/example) project.
 
 Note that if you provide a `moduleFactory` and/or `options` argument, `td.mock`
 will simply delegate to `jest.mock`, since it won't have anything
