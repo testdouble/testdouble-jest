@@ -67,7 +67,7 @@ For a runnable example, check
 `td.mock()` is designed to have the same API as
 [`jest.mock()`](https://facebook.github.io/jest/docs/en/es6-class-mocks.html).
 If you just pass a module name to `td.mock()`, it will imitate the real
-dependency and use Jest's own module mocking facility to ensure that any
+dependency and use Jest's own module replacement facility to ensure that any
 `require()` calls by your test subject receive the testdouble fake, as opposed
 to the real dependency. There's an example in this repo at
 [example/td-mock.test.js](/example/td-mock.test.js).
