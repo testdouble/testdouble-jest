@@ -8,13 +8,31 @@
  */
 module.exports = function (td, jest) {
   td.mock = function (moduleName, factory, options) {
-    if (factory) return jest.mock(moduleName, factory, options)
+    return mockAndMaybeReturn(moduleName, factory, options, td, jest, true)
+  }
+  td.mock._andReturn = function (moduleName, factory, options) {
+    return mockAndMaybeReturn(moduleName, factory, options, td, jest, false)
+  }
+}
 
+const mockAndMaybeReturn = function (moduleName, factory, options, td, jest, returnJest) {
+  if (factory) {
+    if (returnJest) {
+      return jest.mock(moduleName, factory, options)
+    } else {
+      const mockFactoried = factory()
+      jest.mock(moduleName, function () { return mockFactoried }, options)
+      return mockFactoried
+    }
+  } else {
+    ensureTdImitate(td)
     const realThing = jest.requireActual(moduleName)
-    return jest.mock(moduleName, function () {
-      ensureTdImitate(td)
-      return td.imitate(realThing, moduleName + ': ' + nameFor(realThing))
+    const mockThing = td.imitate(realThing, moduleName + ': ' + nameFor(realThing))
+
+    const j = jest.mock(moduleName, function () {
+      return mockThing
     }, options)
+    return returnJest ? j : mockThing
   }
 }
 
