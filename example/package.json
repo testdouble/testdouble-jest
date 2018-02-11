@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "jest": "^22.2.2",
-    "testdouble": "^3.4.0",
+    "testdouble": "testdouble/testdouble.js",
     "testdouble-jest": "file://.."
   }
 }

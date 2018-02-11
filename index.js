@@ -16,6 +16,14 @@ module.exports = function (td, jest) {
       return td.imitate(realThing, moduleName + ': ' + nameFor(realThing))
     }, options)
   }
+
+  td.mock.requireMock = function (moduleName) {
+    return jest.requireMock(moduleName)
+  }
+
+  td.mock.requireActual = function (moduleName) {
+    return jest.requireActual(moduleName)
+  }
 }
 
 const ensureTdImitate = function (td) {
