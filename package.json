@@ -1,6 +1,6 @@
 {
   "name": "testdouble-jest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "testdouble.js extension to add support for Jest module mocking",
   "main": "index.js",
   "scripts": {
