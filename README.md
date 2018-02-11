@@ -35,8 +35,9 @@ even if you were to move to a different test runner.
 **`td.replace(moduleName[, manualStub])`**
 
 Once you've initialized testdouble-jest in your test run, `td.replace()` will be
-able to replace modules just as it does in any other test runner. Functionally,
-it's delegates to `td.mock()`, but behaves just as it [always
+able to replace modules just as it does in any other test runner (as of 
+tetsdouble@3.5.0). Functionally, it's delegates to `td.mock()`, but behaves just 
+as it [always
 has](https://github.com/testdouble/testdouble.js#module-replacement-with-nodejs)
 for module replacement.
 
