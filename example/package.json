@@ -11,5 +11,8 @@
     "jest": "^22.2.2",
     "testdouble": "testdouble/testdouble.js",
     "testdouble-jest": "file://.."
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./helper.js"
   }
 }
