@@ -3,6 +3,8 @@
 Support for [testdouble.js](https://github.com/testdouble/testdouble.js) for
 users of [Jest](https://github.com/facebook/jest)!
 
+Note that testdouble-jest requires testdouble@3.6.0 or higher to work.
+
 ## Installation
 
 ```
