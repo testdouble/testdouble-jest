@@ -76,7 +76,7 @@ to the real dependency. There's an example in this repo at
 [example/td-mock.test.js](/example/td-mock.test.js).
 
 If you've used `jest.mock()` before, `td.mock()` will seem pretty familiar.
-`td.mock()` retruns the `jest` object (since that's what
+`td.mock()` returns the `jest` object (since that's what
 `jest.mock()` does), so your test will also need to `require()` the thing you
 just faked if you want to set up any stubbings or invocation assertions.
 
