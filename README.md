@@ -12,7 +12,7 @@ $ npm i -D testdouble-jest
 ```
 
 Then, from a test helper (we recommend setting a
-[setupTestFrameworkScriptFile](https://facebook.github.io/jest/docs/en/configuration.html#setuptestframeworkscriptfile-string)
+[setupFilesAfterEnv](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 module), invoke the module and pass in both `td` and `jest`, like so:
 
 ```js
