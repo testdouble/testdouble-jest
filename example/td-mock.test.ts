@@ -6,7 +6,7 @@ describe('td.replace', () => {
     td.mock('./baz', () => (() => 'woot'))
     td.mock('./qux', () => (() => 'so fake!'), {virtual: true})
     td.mock('./quux', () => td.func('quux'), {virtual: true})
-  })
+  }) 
   it('tdjs will imitate the dep with no-args', () => {
     const bar = require('./bar')
     td.when(bar(42)).thenReturn('yay!')
