@@ -1,15 +1,15 @@
-let subject
+import subject from './foo';
+
+let bar: any, baz: any, qux: any, quux: any;
+
 describe('td.replace', () => {
   beforeEach(() => {
-    td.mock('./bar')
-    td.mock('./baz', () => (() => 'woot'))
-    td.mock('./qux', () => (() => 'so fake!'), {virtual: true})
-    td.mock('./quux', () => td.func('quux'), {virtual: true})
-
-    subject = require('./foo')
+    bar = td.replace('./bar')
+    baz = td.replace('./baz', () => 'woot')
+    qux = td.replace('./qux', () => 'so fake!')
+    quux = td.replace('./quux', td.func('quux'))
   })
   it('tdjs will imitate the dep with no-args', () => {
-    const bar = require('./bar')
     td.when(bar(42)).thenReturn('yay!')
 
     const result = subject()
@@ -32,8 +32,6 @@ describe('td.replace', () => {
     expect(result.qux).toEqual('so fake!')
   })
   it('can assert a call', () => {
-    const quux = require('./quux')
-
     subject()
 
     td.verify(quux(1337), {times: 1})
