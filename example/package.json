@@ -8,11 +8,13 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^22.2.2",
-    "testdouble": "testdouble/testdouble.js",
+    "jest": "^30.5.2",
+    "testdouble": "^4.0.0",
     "testdouble-jest": "file://.."
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./helper.js"
+    "setupFilesAfterEnv": [
+      "./helper.js"
+    ]
   }
 }
